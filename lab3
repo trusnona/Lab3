@@ -1,0 +1,38 @@
+Public Class Form1
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Dim Math As Integer
+        Dim English As Integer
+        Dim Economic As Integer
+        Dim Average As Integer
+        Dim Over As Integer
+        Math = Val(TextBox2.Text)
+        English = Val(TextBox3.Text)
+        Economic = Val(TextBox4.Text)
+        Average = Val((Math + English + Economic) / 3)
+        TextBox5.Text = Average
+
+        If Math > English And Math > Economic Then
+            TextBox6.Text = Math
+            If Math > 100 Then
+                Over = InputBox("Math Score greater than 100, please enter a value between 0 and 100")
+                TextBox2.Text = Over
+            End If
+
+        ElseIf English > Economic And English > Math Then
+            TextBox6.Text = English
+            If English > 100 Then
+                Over = InputBox("English Score greater than 100, please enter a value between 0 and 100")
+                TextBox3.Text = Over
+            End If
+
+        ElseIf Economic > Math And Economic > English Then
+            TextBox6.Text = Economic
+            If Economic > 100 Then
+                Over = InputBox("Economic Score greater than 100, please enter a value between 0 and 100")
+                TextBox4.Text = Over
+            End If
+        End If
+
+    End Sub
+End Class
